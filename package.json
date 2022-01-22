@@ -2,12 +2,12 @@
   "name": "tryheroku",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node index.js"
   },
-  "author": "",
+  "author": "Numan",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.1",
