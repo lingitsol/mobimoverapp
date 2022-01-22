@@ -1,5 +1,5 @@
 const mongo = require("mongoose");
-const bcrypt = require("bcrypt");
+// const bcrypt = require("bcrypt");
 const schema = mongo.Schema;
 const RiderSchema = new schema(
     {
@@ -41,12 +41,12 @@ const RiderSchema = new schema(
     }
 );
 //for hashing the password before saving into database
-RiderSchema.pre("save", async function (next) {
-    const salt = await bcrypt.genSalt();
-    //assign the hashing password to password field by this variable
-    this.Password = await bcrypt.hash(this.Password, salt);
-    next();
-});
+// RiderSchema.pre("save", async function (next) {
+//     const salt = await bcrypt.genSalt();
+//     //assign the hashing password to password field by this variable
+//     this.Password = await bcrypt.hash(this.Password, salt);
+//     next();
+// });
 
 const RiderDetail = new schema({
     ProfileImage: {

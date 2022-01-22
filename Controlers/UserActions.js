@@ -1,5 +1,5 @@
 const User = require("../Models/UserSchema");
-const bcrypt = require("bcrypt");
+// const bcrypt = require("bcrypt");
 const { createToken } = require("../Authentication/authMiddleRoutes");
 
 
@@ -47,7 +47,8 @@ const loginUser =(req,res) => {
         if(data)
         {
             //decode the password whic we hashed at the time of saving in database
-            const match = await bcrypt.compare(pass,data.Password);
+            // const match = await bcrypt.compare(pass,data.Password);
+            const match=pass;
             if(match)
             {
                 //here we create the token every time when user is login

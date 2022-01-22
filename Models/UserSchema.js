@@ -1,5 +1,5 @@
 const mongo = require("mongoose");
-const bcrypt = require("bcrypt");
+// const bcrypt = require("bcrypt");
 const Schema = mongo.Schema;
 const User = new Schema({
     Name:{
@@ -41,12 +41,12 @@ const User = new Schema({
 );
 
 //for hashing the password before saving into database
-User.pre("save", async function (next){
-    const salt = await bcrypt.genSalt();
-    //assign the hashing password to password field by this variable
-    this.Password = await bcrypt.hash(this.Password,salt);
-    next();
-});
+// User.pre("save", async function (next){
+//     const salt = await bcrypt.genSalt();
+//     //assign the hashing password to password field by this variable
+//     this.Password = await bcrypt.hash(this.Password,salt);
+//     next();
+// });
 
 const client =mongo.model("user",User);
 
